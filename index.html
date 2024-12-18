@@ -8,21 +8,25 @@
 </head>
 
 <body>
-    <div id="header">Etch-A-Sketch</div>
+    <div id="header">Etch-A-Sketch ✎</div>
     <div id="container"></div>
     <div class="btns">
-        <button id="switch">
-            Randomize
-        </button>
-        <button id="reset">
-            Reset
-        </button>
-        <input id="number" type="number">
-            Select a grid size
-        </input>
-        <button id="confirm">
-            Confirm
-        </button>
+        <div id="left">
+            <button id="switch">
+                Randomize
+            </button>
+            <button id="reset">
+                Reset
+            </button>
+        </div>
+
+        <div id="right">
+            <label for="number">Select a grid size:</label>
+            <input id="number" type="number" name="number">
+            <button id="confirm">
+                Confirm
+            </button>
+        </div>
     </div>
 </body>
 </html>
