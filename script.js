@@ -15,7 +15,8 @@
 let confirm_btn = document.querySelector("#confirm");
 let reset_btn = document.querySelector("#reset");
 let switch_btn = document.querySelector("#switch");
-// let buttons = document.querySelectorAll("button");
+let container = document.querySelector("#container");
+let container_style = getComputedStyle(container);
 
 function switch_colors() {
     if (switch_btn.textContent === "Randomize") {
@@ -28,13 +29,12 @@ function switch_colors() {
 }
 
 switch_btn.addEventListener("click", switch_colors);
+// console.log(`${container_style.width / 10}px`);
+// console.log(container_style.width);
 
-
-// buttons.forEach((button) => {
-//     button.addEventListener("mouseover", (event) => {
-//         event.target.style.opacity = 0.8;
-//     })
-//     button.addEventListener("mouseout", (event) => {
-//         event.target.style.opacity = 1;
-//     })
-// })
+for (let i = 0; i < 100; i++) {
+    let innerDiv = document.createElement("div");
+    innerDiv.style.width = `${parseFloat(container_style.width) / 10}px`;
+    innerDiv.style.height = `${parseFloat(container_style.height) / 10}px`;
+    container.appendChild(innerDiv);
+}
