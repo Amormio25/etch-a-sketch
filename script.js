@@ -15,18 +15,26 @@
 let confirm_btn = document.querySelector("#confirm");
 let reset_btn = document.querySelector("#reset");
 let switch_btn = document.querySelector("#switch");
+// let buttons = document.querySelectorAll("button");
 
 function switch_colors() {
-    if (switch_btn.textContent == "Randomize") {
+    if (switch_btn.textContent === "Randomize") {
         switch_btn.textContent = "Black";
         switch_btn.style.backgroundColor = "black";
     } else {
-        switch_btn.textContent = "Randomize"
+        switch_btn.textContent = "Randomize";
         switch_btn.style.backgroundColor = "lightseagreen";
     }
 }
 
-// function button_hover() {
-
-// }
 switch_btn.addEventListener("click", switch_colors);
+
+
+// buttons.forEach((button) => {
+//     button.addEventListener("mouseover", (event) => {
+//         event.target.style.opacity = 0.8;
+//     })
+//     button.addEventListener("mouseout", (event) => {
+//         event.target.style.opacity = 1;
+//     })
+// })

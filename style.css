@@ -41,6 +41,12 @@ button {
     color: white;
     font-weight: bold;
     font-size: 18px;
+    opacity: 1;
+    transition: 0.2s ease-out;
+}
+
+button:hover {
+    opacity: 0.9;
 }
 
 label {
@@ -63,5 +69,6 @@ label {
 
 #switch {
     background-color: lightseagreen;
-    width: 125px;
+    flex: 1 0 125px;
+    min-width: 125px;
 }
