@@ -1,5 +1,7 @@
 * {
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 
+                            'Lucida Sans', Arial, sans-serif;
+    transition: 0.1s ease-out;
   }
 
 body {
@@ -29,6 +31,13 @@ body {
 }
 
 #header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+#logo {
     font-size: 55px;
     font-weight: 1000;
     color: yellow;
@@ -44,7 +53,6 @@ button {
     font-weight: bold;
     font-size: 18px;
     opacity: 1;
-    transition: 0.2s ease-out;
 }
 
 button:hover {
