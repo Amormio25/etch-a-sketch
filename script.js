@@ -6,6 +6,14 @@ let container_style = getComputedStyle(container);
 let drawing_status = document.querySelector("#drawing-status");
 let pen_down = false;
 
+function reset() {
+    let children = container.children;
+    for (let i = 0; i < children.length; i++) {
+        children[i].style.backgroundColor = "white";
+        children[i].style.opacity = 0;
+    }
+}
+
 function switch_colors() {
     if (switch_btn.textContent === "Randomize") {
         switch_btn.textContent = "Black";
@@ -47,6 +55,7 @@ for (let i = 0; i < 100; i++) {
     container.appendChild(innerDiv);
 }
 
+reset_btn.addEventListener("click", reset);
 switch_btn.addEventListener("click", switch_colors);
 container.addEventListener("mouseover", draw);
 container.addEventListener("click", is_drawing);
