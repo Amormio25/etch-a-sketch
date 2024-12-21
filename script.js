@@ -25,20 +25,44 @@ function switch_colors() {
 }
 
 function draw(event) {
-    if (event.target.className === "grid_divs" 
-                                && switch_btn.textContent === "Randomize"
-                                && pen_down) {
-        event.target.style.backgroundColor = "black";
-        let opacity = event.target.style.opacity;
-        event.target.style.opacity = parseFloat(opacity) + 0.1;
-    }
+    let opacity = event.target.style.opacity;
+    if (event.target.className === "grid_divs" && pen_down) {
+        if (switch_btn.textContent === "Randomize") {
+            if (event.target.style.opacity == 0 ||
+                            event.target.style.backgroundColor !== "white") {
+                event.target.style.backgroundColor = "black";
+            }
+            event.target.style.opacity = parseFloat(opacity) + 0.1;
+        } else {
+            let rand_r = Math.floor(Math.random() * 253) + 1;
+            let rand_g = Math.floor(Math.random() * 253) + 1;
+            let rand_b = Math.floor(Math.random() * 253) + 1;
+            
+            if (event.target.style.opacity == 0 || 
+                            event.target.style.backgroundColor === "black") {
+                event.target.style.backgroundColor = 
+                                    `rgb(${rand_r}, ${rand_g}, ${rand_b})`;
+            }
+            event.target.style.opacity = parseFloat(opacity) + 0.1;
+        }
+    }   
 }
 
 function is_drawing(event) {
     pen_down = !pen_down;
-    event.target.style.backgroundColor = "black";
     let opacity = event.target.style.opacity;
-    event.target.style.opacity = parseFloat(opacity) + 0.1;
+    if (pen_down && switch_btn.textContent === "Randomize") {
+        event.target.style.backgroundColor = "black";
+        event.target.style.opacity = parseFloat(opacity) + 0.1;
+    } else if (pen_down && switch_btn.textContent === "black") {
+        let rand_r = Math.floor(Math.random() * 253) + 1;
+        let rand_g = Math.floor(Math.random() * 253) + 1;
+        let rand_b = Math.floor(Math.random() * 253) + 1;
+
+        event.target.style.backgroundColor = 
+                                `rgb(${rand_r}, ${rand_g}, ${rand_b})`;
+        event.target.style.opacity = parseFloat(opacity) + 0.1;
+    }
 
     if (pen_down) 
         drawing_status.textContent = "Click to stop drawing!";
