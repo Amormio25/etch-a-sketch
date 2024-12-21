@@ -86,7 +86,7 @@ function isDrawing(event) {
         if (penDown && switchBtn.textContent === "Randomize") {
             event.target.style.backgroundColor = "black";
             event.target.style.opacity = parseFloat(opacity) + 0.1;
-        } else if (penDown && switchBtn.textContent === "black") {
+        } else if (penDown && switchBtn.textContent === "Black") {
             let randR = Math.floor(Math.random() * 253) + 1;
             let randG = Math.floor(Math.random() * 253) + 1;
             let randB = Math.floor(Math.random() * 253) + 1;
