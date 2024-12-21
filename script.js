@@ -91,8 +91,11 @@ function isDrawing(event) {
             let randG = Math.floor(Math.random() * 253) + 1;
             let randB = Math.floor(Math.random() * 253) + 1;
 
-            event.target.style.backgroundColor = 
+            if (event.target.style.opacity == 0 || 
+                            event.target.style.backgroundColor === "black") {
+                event.target.style.backgroundColor = 
                             `rgb(${randR}, ${randG}, ${randB})`;
+            }
             event.target.style.opacity = parseFloat(opacity) + 0.1;
         }
 
